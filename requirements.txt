@@ -1,0 +1,10 @@
+geographiclib==2.0
+geopandas==0.14.4
+geopy==2.4.1
+streamlit==1.36.0
+streamlit_folium==0.21.0
+folium==0.17.0
+requests==2.32.3
+shapely== 2.0.4
+plotly==5.22.0
+pandas==2.2.2
