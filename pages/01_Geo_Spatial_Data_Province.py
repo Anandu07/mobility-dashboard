@@ -11,6 +11,12 @@ import pandas as pd
 
 st.set_page_config(layout="wide")
 
+st.markdown("""
+# Spain Mobility Study at Province Level - 3 Days
+            \n
+            \n\n
+""")
+
 @st.cache_data
 def load_mobility_data():
     return pd.read_csv("data/mobility_week_sample_3.csv")

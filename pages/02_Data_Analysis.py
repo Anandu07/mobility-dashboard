@@ -1,74 +1,38 @@
-# import streamlit as st
-# import pandas as pd
-# import plotly as plt
-# import geopandas as gpd
-# import plotly.express as px
-# import censusdis.data as ced
-# import censusdis.maps as cem
-# from censusdis.datasets import ACS5
-# from censusdis import states
-# import json
+import streamlit as st
+st.set_page_config(layout="wide")
+st.markdown("""
+# Spain Mobility Data Analysis 
+            \n
+            \n\n
+""")
+
+st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac felis donec et odio pellentesque diam volutpat commodo. Egestas diam in arcu cursus euismod quis. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. A lacus vestibulum sed arcu non odio euismod lacinia. Ac ut consequat semper viverra. Sapien et ligula ullamcorper malesuada proin libero. Varius morbi enim nunc faucibus a pellentesque sit amet. Mi in nulla posuere sollicitudin aliquam. Arcu cursus vitae congue mauris rhoncus. Elit pellentesque habitant morbi tristique senectus. Dui nunc mattis enim ut. Nunc pulvinar sapien et ligula ullamcorper malesuada. Vel facilisis volutpat est velit egestas dui id ornare arcu. Sed viverra ipsum nunc aliquet bibendum.")
+
+with st.container():
+    st.header("Mobility and Median Income across Spain")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image("images/network.png", caption="Mobility network between Spanish districts. Districts are represented as nodes, connected by the total number of trips between them for the first week of September 2023.")
+    with col2:
+        st.image("images/districts_revenue.png", caption="Heatmap of median revenue per consumption unit of Spanish districts. ")
+    col3, col4 = st.columns(2)
+    with col3:
+        pass
+    with col4:
+        pass
+
+with st.container():
+    st.header("Mobility and Median Income across Spain")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image("images/network.png", caption="Mobility network between Spanish districts. Districts are represented as nodes, connected by the total number of trips between them for the first week of September 2023.")
+    with col2:
+        st.image("images/districts_revenue.png", caption="Heatmap of median revenue per consumption unit of Spanish districts. ")
 
 
-# st.set_page_config(layout="wide")
-
-# st.title("Mobility Data Analysis")
-# st.write("""Plot displays bla bla""")
-
-# st.info("""Spain Plotly Map""")
 
 
-# @st.cache_data
-# def get_census_data(state_fips, var_table, var_label):
- 
-#     df = ced.download(
-#         dataset=ACS5,
-#         vintage=2022,         
-#         download_variables=['NAME', var_table], 
-#         state=state_fips,
-#         county='*',
-#         with_geometry=True)
+# col1,col2,col3 = st.columns(3)
 
-#     # "San Francisco, California" -> "San Francisco"
-#     df['NAME'] = df['NAME'].apply(lambda x: x.split(',')[0])
-
-#     # The dataframe we get from ced.download has a column with the name of the variable's table (i.e. 'B01001_001E').
-#     # For convenience, change the name to be the variable's label (i.e. 'Median Household Income'). 
-#     df = df.rename(columns={var_table: var_label, 'NAME': 'County'})
-
-#     return df
-
-# st.header('Selected County Demographics (2022)')
-
-# all_state_names = list(states.NAMES_FROM_IDS.values())
-# state_name = st.selectbox("Select a State: ", all_state_names, index=4) # Default to California
-# state_fips = states.IDS_FROM_NAMES[state_name]
-
-# census_vars = {
-#     # var_label                var_table
-#     'Median Household Income': 'B19013_001E',
-#     'Total Population'       : 'B01001_001E',
-#     'Median Rent'            : 'B25058_001E' }
-
-# var_label = st.selectbox("Select a demographic", census_vars.keys())
-# var_table = census_vars[var_label]
-
-# df = get_census_data(state_fips, var_table, var_label)
-
-# col1, col2 = st.columns(2)
-
-# with col1:
-#     df = df.sort_values(var_label, ascending=False)
-#     st.dataframe(df[['County', var_label]], hide_index=True)
-
-# with col2:
-#     df = df.set_index('County')
-#     fig = px.choropleth(df, geojson=df.geometry, locations=df.index, 
-#                         color=var_label, color_continuous_scale="Viridis",
-#                         projection="mercator")
-#     fig.update_geos(fitbounds="locations", visible=False)
-#     st.plotly_chart(fig)
-
-# st.write("Created by [Ari Lamstein](https://www.arilamstein.com). View the code [here](https://github.com/arilamstein/censusdis-streamlit).")
 
 
