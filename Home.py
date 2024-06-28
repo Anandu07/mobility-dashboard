@@ -5,10 +5,10 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 st.markdown("""
- # Complexity 72H
-            \n
-            \n\n
-""")
+<div style="text-align: center; font-size: 36px; font-weight: bold;">
+    DISENTANGLING INDIVIDUAL-LEVEL FROM LOCATION-BASED INCOME UNCOVERS
+SOCIOECONOMIC PREFERENTIAL MOBILITY AND IMPACTS SEGREGATION ESTIMATES</div>
+""", unsafe_allow_html=True)
 
 st.header("About Research\n\n\n")
 st.write("""Spatial and social segregation profoundly impacts daily life across various environments, from urban centers to rural areas throughout Spain. This segregation, often based on income, gender, ethnicity, and age, shapes where people live, work, and engage in their daily activities, influencing their access to essential services such as healthcare and education. This in turn perpetuates disparities across social, economic, and political spheres. Moving beyond traditional studies that focus primarily on residential patterns, our research incorporates human mobility to provide a comprehensive view of how segregation manifests across the diverse landscapes of Spain.
