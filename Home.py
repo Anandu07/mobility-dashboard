@@ -21,7 +21,7 @@ Using a detailed dataset of mobile phone records provided by the Spanish Ministr
 with st.container():
     st.header("The Team")
     st.image("images/team_image.jpeg",width=1000)
-    st.write("something about the team")
+    # st.write("something about the team")
 
 
 
